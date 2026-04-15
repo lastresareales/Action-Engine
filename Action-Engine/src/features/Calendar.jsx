@@ -268,13 +268,18 @@ export default function Calendar() {
   return (
     <div style={{
       padding: '24px',
-      backgroundColor: 'var(--bg-secondary)',
+      backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.58), rgba(30, 41, 59, 0.48)), url(${calendarImg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: 'rgba(15, 23, 42, 0.25)',
       borderRadius: '12px',
-      border: '1px solid var(--border)',
+      border: '1px solid rgba(148, 163, 184, 0.35)',
       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+      backdropFilter: 'blur(7px) saturate(130%)',
+      WebkitBackdropFilter: 'blur(7px) saturate(130%)',
     }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-        <img src={calendarImg} alt="Calendar" style={{ height: '48px', width: 'auto' }} />
         <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
           <Button
             onClick={() => setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1))}
@@ -331,8 +336,8 @@ export default function Calendar() {
               style={{
                 padding: '10px',
                 minHeight: '90px',
-                backgroundColor: day ? (isToday ? 'rgba(99, 102, 241, 0.1)' : 'var(--bg-tertiary)') : 'var(--border)',
-                border: selectedDate?.toDateString() === day?.toDateString() ? '2px solid var(--primary)' : '1px solid var(--border)',
+                backgroundColor: 'transparent',
+                border: selectedDate?.toDateString() === day?.toDateString() ? '1px solid var(--primary)' : '1px solid rgba(148, 163, 184, 0.45)',
                 borderRadius: '8px',
                 cursor: day ? 'pointer' : 'default',
                 fontSize: '0.85rem',
@@ -342,7 +347,7 @@ export default function Calendar() {
               onMouseEnter={(e) => {
                 if (day) {
                   e.currentTarget.style.borderColor = 'var(--primary-light)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.2)';
+                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(99, 102, 241, 0.12)';
                 }
               }}
               onMouseLeave={(e) => {

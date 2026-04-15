@@ -24,13 +24,13 @@ export default function GoalItem({ goal, onToggleStep, onRemove, onUpdateGoal })
 
   return (
     <div style={{
-      backgroundColor: 'var(--bg-tertiary)',
-      border: '1px solid var(--border)',
+      backgroundColor: 'transparent',
+      border: '1px solid rgba(148, 163, 184, 0.45)',
       borderRadius: '10px',
       padding: '16px',
       marginBottom: '12px',
       transition: 'all 0.2s ease',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 1px 6px rgba(0, 0, 0, 0.12)',
     }}
     onMouseEnter={(e) => {
       e.currentTarget.style.borderColor = 'var(--primary)';
@@ -104,8 +104,8 @@ export default function GoalItem({ goal, onToggleStep, onRemove, onUpdateGoal })
       <div style={{
         marginTop: '12px',
         padding: '12px',
-        backgroundColor: 'rgba(99, 102, 241, 0.05)',
-        border: '1px solid rgba(99, 102, 241, 0.1)',
+        backgroundColor: 'transparent',
+        border: '1px solid rgba(129, 140, 248, 0.45)',
         borderRadius: '8px',
         fontSize: '0.9rem',
       }}>
@@ -143,7 +143,8 @@ export default function GoalItem({ goal, onToggleStep, onRemove, onUpdateGoal })
                 alignItems: 'center',
                 gap: '10px',
                 padding: '10px',
-                backgroundColor: 'rgba(0, 0, 0, 0.2)',
+                backgroundColor: 'transparent',
+                border: '1px solid rgba(148, 163, 184, 0.35)',
                 borderRadius: '8px',
                 marginBottom: '8px',
                 opacity: subtask.completed ? 0.5 : 1,

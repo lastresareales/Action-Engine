@@ -1,5 +1,6 @@
 import GoalTracker from './features/GoalTracker';
 import Calendar from './features/Calendar';
+import bannerImg from './assets/banner(1).png';
 
 export default function App() {
   return (
@@ -8,32 +9,20 @@ export default function App() {
       <header style={{
         background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%)',
         borderBottom: '1px solid var(--border)',
-        padding: '40px 20px',
+        padding: 0,
         textAlign: 'center',
         backdropFilter: 'blur(10px)',
       }}>
-        <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-          <h1 style={{
-            fontSize: '3.5rem',
-            fontWeight: '800',
-            margin: '0 0 12px 0',
-            background: 'linear-gradient(135deg, var(--primary-light) 0%, var(--secondary) 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-            letterSpacing: '-1px',
-          }}>
-            ⚙️ Action Engine
-          </h1>
-          <p style={{
-            margin: 0,
-            color: 'var(--text-secondary)',
-            fontSize: '1.1rem',
-            fontWeight: '500',
-          }}>
-            Break down goals → Track progress → Maximize productivity
-          </p>
-        </div>
+        <img
+          src={bannerImg}
+          alt="Action Engine"
+          style={{
+            width: '100%',
+            height: 'auto',
+            display: 'block',
+            filter: 'drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3))',
+          }}
+        />
       </header>
 
       <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '40px 20px' }}>

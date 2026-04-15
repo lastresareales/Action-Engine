@@ -81,16 +81,21 @@ export default function GoalTracker() {
   return (
     <div style={{
       padding: '24px',
-      backgroundColor: 'var(--bg-secondary)',
+      backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.58), rgba(30, 41, 59, 0.48)), url(${goalsImg})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      backgroundColor: 'rgba(15, 23, 42, 0.25)',
       borderRadius: '12px',
-      border: '1px solid var(--border)',
+      border: '1px solid rgba(148, 163, 184, 0.35)',
       height: 'fit-content',
       maxHeight: '90vh',
       overflowY: 'auto',
       boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
+      backdropFilter: 'blur(7px) saturate(130%)',
+      WebkitBackdropFilter: 'blur(7px) saturate(130%)',
     }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-        <img src={goalsImg} alt="Goal Tracker" style={{ height: '48px', width: 'auto' }} />
+      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginBottom: '24px' }}>
         <Button onClick={() => setShowForm(!showForm)} variant="primary">
           {showForm ? '✕' : '+ New Goal'}
         </Button>
